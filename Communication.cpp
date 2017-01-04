@@ -9,7 +9,7 @@
 #define RCVBUFSIZE 32   /* Size of receive buffer */
 
     int         sock;                   /* Socket descriptor */
-	char messageString[] = "GetDoor[Left]";
+	char messageString[] = "SetDoorLeft:open;";
     char *      echoString = messageString;             /* String to send to echo server */
     char        echoBuffer[RCVBUFSIZE]; /* Buffer for received string */
     int         echoStringLen;          /* Length of string to echo */
@@ -71,7 +71,7 @@ int main ()
 {
 	printf("Communication started \n");
 	fflush(stdout);
-    sock = CreateTCPClientSocket("127.0.0.1", 5558/*const char * servIP, unsigned short port*/);
+    sock = CreateTCPClientSocket("127.0.0.1", 5555/*const char * servIP, unsigned short port*/);
         printf("Socket created and connected \n");
         fflush(stdout);
     
