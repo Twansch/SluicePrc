@@ -63,6 +63,7 @@ void SendAndReceive()
 		
 		echoBuffer[bytesRcvd] = '\0';
         printf("Message from server: %s", echoBuffer);
+        
         printf("\n");
 }
 
