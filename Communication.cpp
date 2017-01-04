@@ -9,7 +9,8 @@
 #define RCVBUFSIZE 32   /* Size of receive buffer */
 
     int         sock;                   /* Socket descriptor */
-    char *      echoString;             /* String to send to echo server */
+	char messageString[] = "GetDoor[Left]";
+    char *      echoString = messageString;             /* String to send to echo server */
     char        echoBuffer[RCVBUFSIZE]; /* Buffer for received string */
     int         echoStringLen;          /* Length of string to echo */
     int         bytesRcvd;              /* Bytes read in single recv() */
@@ -22,6 +23,7 @@ int CreateTCPClientSocket (const char * servIP, unsigned short port)
     /* Create a reliable, stream socket using TCP */
     if ((sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
     {
+        printf("Socket creation failed");
         //DieWithError("socket() failed");
     }
 
@@ -35,6 +37,7 @@ int CreateTCPClientSocket (const char * servIP, unsigned short port)
     /* Establish the connection to the echo server */
     if (connect(sock, (struct sockaddr *) &echoServAddr, sizeof(echoServAddr)) < 0)
     {
+        printf("connect() failed");
         //DieWithError("connect() failed");
     }
     
@@ -65,15 +68,16 @@ void SendAndReceive()
 
 int main ()
 {
-
-
-
+	printf("Communication started \n");
+	fflush(stdout);
     sock = CreateTCPClientSocket("127.0.0.1", 5558/*const char * servIP, unsigned short port*/);
-        
+        printf("Socket created and connected \n");
+        fflush(stdout);
     
     SendAndReceive();
-   
+	printf("Closing the show \n");
+	fflush(stdout);
     
     close (sock);
-    exit (0);
+    return 0;
 }
