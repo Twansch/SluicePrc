@@ -9,8 +9,7 @@
 #define RCVBUFSIZE 32   /* Size of receive buffer */
 
     int         sock;                   /* Socket descriptor */
-	char messageString[] = "SetDoorLeft:open;";
-    char *      echoString = messageString;             /* String to send to echo server */
+
     char        echoBuffer[RCVBUFSIZE]; /* Buffer for received string */
     int         echoStringLen;          /* Length of string to echo */
     int         bytesRcvd;              /* Bytes read in single recv() */
@@ -44,7 +43,7 @@ int CreateTCPClientSocket (const char * servIP, unsigned short port)
     return (sock);
 }
 
-void SendAndReceive()
+void SendAndReceive(char * echoString)
 {
 
         echoStringLen = strlen (echoString);          /* Determine input length */
@@ -69,13 +68,15 @@ void SendAndReceive()
 
 int main ()
 {
+	char messageString[] = "GetDoorLeft;";//"SetDoorLeft:open;"; //Don't forget to end with a semicolon!
+    char *passingString = messageString;             /* String to send to echo server */
 	printf("Communication started \n");
 	fflush(stdout);
     sock = CreateTCPClientSocket("127.0.0.1", 5555/*const char * servIP, unsigned short port*/);
         printf("Socket created and connected \n");
         fflush(stdout);
     
-    SendAndReceive();
+    SendAndReceive(passingString);
 	printf("Closing the show \n");
 	fflush(stdout);
     
