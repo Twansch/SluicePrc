@@ -1,6 +1,7 @@
 class Door
 {
 	public: // use protected instead of private when DoorMotor and DoorLock need it
+		Door();
 		enum Doorstate {OPEN, CLOSED, OPENING, CLOSING, LOCKED, ENGINEDAMAGE, STOPPED}
 		DoorState state
 		Valve lowValve;
