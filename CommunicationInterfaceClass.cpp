@@ -32,7 +32,7 @@ public:
     /* Construct the server address structure */
     memset(&echoServAddr, 0, sizeof(echoServAddr));     /* Zero out structure */
     echoServAddr.sin_family      = AF_INET;             /* Internet address family */
-    echoServAddr.sin_addr.s_addr = inet_addr(servIP);   /* Server IP address */
+    echoServAddr.sin_addr.s_addr = inet_addr("127.0.0.1");   /* Server IP address */
     echoServAddr.sin_port        = htons(port);         /* Server port */
 
     /* Establish the connection to the echo server */
@@ -51,5 +51,5 @@ protected:
 	int         sock;                   /* Socket descriptor */
 	
 private:
-	const char * servIP = "127.0.0.1";
+	//const char * servIP = "127.0.0.1";
 };
