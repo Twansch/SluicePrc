@@ -1,6 +1,7 @@
-class Door
-{
-		DoorState GetDoorState()
+#include "Door.h"
+
+
+		Door::DoorState Door::GetDoorState()
 		{
 		}
 		void SetDoorState()
@@ -22,4 +23,3 @@ class Door
 		{
 		}
 		
-}

@@ -1,3 +1,6 @@
+#include "Door.h"
+#include "TrafficLight.h"
+
 class Sluice
 {
 	public:

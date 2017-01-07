@@ -2,7 +2,7 @@ class Valve
 {
 	public:
 		Valve();
-		bool valveOpened
+		bool valveOpened;
 		void Open();
 		void Close();
-}
+};

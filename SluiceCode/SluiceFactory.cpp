@@ -1,3 +1,5 @@
+#include "SluiceFactory.h"
+
 class SluiceFactory
 {
 	SluiceFactory()
