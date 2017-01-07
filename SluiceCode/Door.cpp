@@ -6,6 +6,15 @@ class Door
 		void SetDoorState()
 		{
 		}
+		
+		void Open()
+		{
+		}
+		
+		void Close()
+		{
+		}
+		
 		void CheckWaterHeight()
 		{
 		}

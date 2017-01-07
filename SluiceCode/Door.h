@@ -11,4 +11,6 @@ class Door
 		void SetDoorState();
 		void CheckWaterHeight();
 		void SetValve(Valve valve);
+		void Open();
+		void Close();
 }
