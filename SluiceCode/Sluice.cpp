@@ -2,8 +2,10 @@
 
 
 
-		Sluice::Sluice(Door leftDoor, Door rightDoor)
+		Sluice::Sluice(Door leftDoor, Door rightDoor, int port)
 		{
+			this->Port = port;
+			this->communication = new Communication(port);
 		}
 		void OpenDoor(Door door)
 		{

@@ -6,7 +6,7 @@
 	{
 	}
 	
-	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType) //SluiceType is een enum met de 3 verschillende variaties
+	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType, int port) //SluiceType is een enum met de 3 verschillende variaties
 	{
 		Door leftDoor;
 		Door rightDoor;
@@ -36,7 +36,7 @@
 	  }
         //Real bad error!
    }
-		Sluice sluice = Sluice(leftDoor, rightDoor);
+		Sluice sluice = Sluice(leftDoor, rightDoor, port);
 		return sluice;
 	}
 	/*SluiceWatch roept factory.ConstructSluice aan. 

@@ -11,7 +11,7 @@ class SluiceFactory
 	public:
 		SluiceFactory();
 		enum SluiceType {normalSluice, motorSluice, lockSluice};
-		Sluice ConstructSluice(SluiceType sluiceType);
+		Sluice ConstructSluice(SluiceType sluiceType, int port);
 		
 };
 
