@@ -1,18 +1,18 @@
 #ifndef TRAFFICLIGHT_H
-#define TRAFFIClIGHT_H
+#define TRAFFICLIGHT_H
 
-#include "TrafficLight.h"
+
 
 class TrafficLight
 {
 	public:
 		TrafficLight();
-		enum LightColour {Red, Greed}
+		enum LightColour {Red, Green};
 		LightColour currentColour;
 		LightColour GetCurrentColour();
 		void SetCurrentColour(LightColour lightColour);
-		void On();
-		void Off();
-}
+		void On(int lightNumber);
+		void Off(int lightNumber);
+};
 
 #endif

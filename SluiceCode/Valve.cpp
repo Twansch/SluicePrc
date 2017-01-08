@@ -1,11 +1,13 @@
 #include "Valve.h"
 
-class Valve
-{
-		void Open()
+		
+		Valve::Valve()
 		{
 		}
-		void Close()
+		void Valve::Open()
 		{
 		}
-}
+		void Valve::Close()
+		{
+		}
+

@@ -1,16 +1,19 @@
+#ifndef SLUICE_H
+#define SLUICE_H
+
 #include "Door.h"
 #include "TrafficLight.h"
 
 class Sluice
 {
 	public:
-		Sluice(int port);
-		Door::Door leftDoor;
-		Door::Door rightDoor;
-		TrafficLight::TrafficLight leftLightIn;
-		TrafficLight::TrafficLight leftLightOut;
-		TrafficLight::TrafficLight rightLightIn;
-		TrafficLight::TrafficLight rightLightOut;
+		Sluice(Door leftDoor, Door rightDoor);
+		Door LeftDoor;
+		Door RightDoor;
+		TrafficLight leftLightIn;
+		TrafficLight leftLightOut;
+		TrafficLight rightLightIn;
+		TrafficLight rightLightOut;
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);
 		void SetLight(TrafficLight light);
@@ -19,4 +22,6 @@ class Sluice
 		int Port;
 
 
-}
+};
+
+#endif

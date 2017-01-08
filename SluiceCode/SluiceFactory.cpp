@@ -1,33 +1,45 @@
 #include "SluiceFactory.h"
 
-class SluiceFactory
-{
-	SluiceFactory()
+
+
+	SluiceFactory::SluiceFactory()
 	{
 	}
 	
-	Sluice ConstructSluice(SluiceType sluiceType) //SluiceType is een enum met de 3 verschillende variaties
+	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType) //SluiceType is een enum met de 3 verschillende variaties
 	{
-		switch(sluiceType) {
-      case normalSluice :
-			Door leftDoor = new Door();
-			Door rightDoor = new Door();
+		Door leftDoor;
+		Door rightDoor;
+		switch(sluiceType) 
+		{
+      case SluiceFactory::normalSluice:
+      {
+			leftDoor = Door();
+			rightDoor = Door();
 			break;
-      case motorSluice :
-			DoorMotor leftDoor = new DoorMotor();
-			DoorMotor rightDoor = new DoorMotor();
+	  }
+      case SluiceFactory::motorSluice:
+      {
+			leftDoor = DoorMotor();
+			rightDoor = DoorMotor();
 			break;
-      case lockSluice :
-			DoorLock leftDoor = new DoorLock();
-			DoorLock rightDoor = new DoorLock();
+	  }
+      case SluiceFactory::lockSluice:
+      {
+			leftDoor = DoorLock();
+			rightDoor = DoorLock();
 			break;
-      default :
+	  }
+      default:
+      {
+			break;
+	  }
         //Real bad error!
    }
-		Sluice sluice = new Sluice(leftDoor, rightDoor);
+		Sluice sluice = Sluice(leftDoor, rightDoor);
 		return sluice;
 	}
 	/*SluiceWatch roept factory.ConstructSluice aan. 
 	Factory maakt deuren en geeft die mee aan de constructor van sluis en returned deze sluis. 
 	De implementatie van leftdoor.open en leftdoor.close verschilt door inheritance*/
-}
+

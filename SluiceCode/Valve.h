@@ -1,3 +1,6 @@
+#ifndef VALVE_H
+#define VALVE_H
+
 class Valve
 {
 	public:
@@ -6,3 +9,5 @@ class Valve
 		void Open();
 		void Close();
 };
+
+#endif

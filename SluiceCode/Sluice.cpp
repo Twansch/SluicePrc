@@ -1,9 +1,8 @@
 #include "Sluice.h"
 
 
-class Sluice
-{
-		void Sluice(port)
+
+		Sluice::Sluice(Door leftDoor, Door rightDoor)
 		{
 		}
 		void OpenDoor(Door door)
@@ -16,7 +15,7 @@ class Sluice
 		}
 		void SetLight(TrafficLight light)
 		{
-			int number = 0;			
+			/*int number = 0;			
 
 			switch(light)
 			{
@@ -44,7 +43,7 @@ class Sluice
 			}
 
 
-		/*	if(light == leftLightIn)
+			if(light == leftLightIn)
 		
 		TrafficLight::TrafficLight ;
 		TrafficLight::TrafficLight rightLightOut;)
@@ -57,4 +56,3 @@ class Sluice
 			}*/
 			
 		}
-}

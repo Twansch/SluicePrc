@@ -3,17 +3,18 @@
 #include <sstream>
 #include <stdio.h>
 
-class TrafficLight
-{
+
 
 		TrafficLight::TrafficLight()
 		{
 
 		}
 
-		LightColour GetCurrentColour(int lightNumber)
+		TrafficLight::LightColour GetCurrentColour(int lightNumber)
 		{
-			std::cout << "GetTrafficLight" << lightNumber << lightColour << std::endl;
+			std::cout << "GetTrafficLight" << lightNumber << std::endl;
+			TrafficLight::LightColour returnColour /*= Red*/;
+			return returnColour;
 			
 		}
 
@@ -34,7 +35,7 @@ class TrafficLight
 
 		void TrafficLight::On(int lightNumber)
 		{
-			LightColour c = GetCurrentColour(lightNumber);
+			/*LightColour c = GetCurrentColour(lightNumber);
 			//SetCurrentColour(c);
 			if(c == Red)
 			{
@@ -46,11 +47,11 @@ class TrafficLight
 			}
 			
 
-			std::cout << "SetTrafficLight" << lightNumber << lightColour << "On" << std::endl;
+			std::cout << "SetTrafficLight" << lightNumber << lightColour << "On" << std::endl;*/
 		}
 
 		void TrafficLight::Off(int lightNumber)
 		{
-			std::cout << "SetTrafficLight" << lightNumber << lightColour << "Off" << std::endl;
+			std::cout << "SetTrafficLight" << lightNumber << "Off" << std::endl;
 		}
-}
+

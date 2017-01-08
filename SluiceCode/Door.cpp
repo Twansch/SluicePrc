@@ -1,25 +1,27 @@
 #include "Door.h"
 
-
+		Door::Door()
+		{
+		}
 		Door::DoorState Door::GetDoorState()
 		{
 		}
-		void SetDoorState()
+		void Door::SetDoorState()
 		{
 		}
 		
-		void Open()
+		void Door::Open()
 		{
 		}
 		
-		void Close()
+		void Door::Close()
 		{
 		}
 		
-		void CheckWaterHeight()
+		void Door::CheckWaterHeight()
 		{
 		}
-		void SetValve(Valve valve)
+		void Door::SetValve(Valve valve)
 		{
 		}
 		
