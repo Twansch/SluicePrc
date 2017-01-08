@@ -10,9 +10,9 @@ class TrafficLight
 		enum LightColour {Red, Green};
 		LightColour currentColour;
 		LightColour GetCurrentColour();
-		void SetCurrentColour(LightColour lightColour);
-		void On(int lightNumber);
-		void Off(int lightNumber);
+		void SetCurrentColour(LightColour lightColour, int lightNumber);
+		//void On(int lightNumber);
+		//void Off(int lightNumber);
 		Communication* communication;
 };
 
