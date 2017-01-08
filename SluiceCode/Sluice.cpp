@@ -2,12 +2,19 @@
 
 
 
-		Sluice::Sluice(Door leftDoor, Door rightDoor)
+		Sluice::Sluice(Door leftDoor, Door rightDoor, Communication* comm)
 		{
+			communication = comm;
+			*LeftDoor = leftDoor;
+			*RightDoor = rightDoor;
+			*leftLightIn = TrafficLight(comm);
+			*leftLightOut = TrafficLight(comm);
+			*rightLightIn = TrafficLight(comm);
+			*rightLightOut = TrafficLight(comm);
 
 		}
 
-		Door::WaterLevel Door::GetWaterHeight()
+		/*Door::WaterLevel Door::GetWaterHeight()
 		{
 			Door::WaterLevel waterLevel = High;
 
@@ -47,11 +54,10 @@
 				- aboveValve2
 				- aboveValve3
 				- high
-				*/   
+
 				 //instead of High get message
 				return waterLevel;
-		}
-
+		}*/
 		void OpenDoor(Door door)
 		{
 
@@ -65,7 +71,7 @@
 
 		void SetLight(TrafficLight light)
 		{
-			Door::WaterLevel w = Door::GetWaterHeight();
+			/*Door::WaterLevel w = Door::GetWaterHeight();
 
 
 			

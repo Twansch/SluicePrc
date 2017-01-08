@@ -5,9 +5,9 @@
 
 
 
-		TrafficLight::TrafficLight()
+		TrafficLight::TrafficLight(Communication* comm)
 		{
-
+			communication = comm;
 		}
 
 		TrafficLight::LightColour GetCurrentColour(int lightNumber)
@@ -19,7 +19,7 @@
 
 		void TrafficLight::SetCurrentColour(LightColour lightColour, int lightNumber)
 		{
-			if (lightColour == Green)
+			/*if (lightColour == Green)
 			{
 				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Green:on;");
 				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Red:off;");

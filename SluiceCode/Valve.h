@@ -6,10 +6,11 @@
 class Valve
 {
 	public:
-		Valve();
+		Valve(Communication* comm);
 		bool valveOpened;
 		void Open();
 		void Close();
+		Communication* communication;
 };
 
 #endif

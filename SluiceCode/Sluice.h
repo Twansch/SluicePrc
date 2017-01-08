@@ -9,17 +9,17 @@
 class Sluice
 {
 	public:
-		Sluice(Door leftDoor, Door rightDoor);
-		Door LeftDoor;
-		Door RightDoor;
-		TrafficLight leftLightIn;
-		TrafficLight leftLightOut;
-		TrafficLight rightLightIn;
-		TrafficLight rightLightOut;
+		Sluice(Door leftDoor, Door rightDoor, Communication* comm);
+		Door* LeftDoor;
+		Door* RightDoor;
+		TrafficLight* leftLightIn;
+		TrafficLight* leftLightOut;
+		TrafficLight* rightLightIn;
+		TrafficLight* rightLightOut;
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);
 		void SetLight(TrafficLight light);
-		
+		Communication* communication;
 	
 	private:
 		int Port;

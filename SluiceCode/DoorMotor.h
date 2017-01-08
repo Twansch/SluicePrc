@@ -6,10 +6,11 @@
 class DoorMotor: public Door 
 {
 	public:
-		DoorMotor();
+		DoorMotor(Communication* comm);
 		void SetDoorState();
 		void Open();
 		void Close();
+		
 };
 
 #endif
