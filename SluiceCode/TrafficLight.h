@@ -3,6 +3,7 @@
 
 #include "Communication.h"
 
+
 class TrafficLight
 {
 	public:

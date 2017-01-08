@@ -23,8 +23,7 @@ class Sluice
 	
 	private:
 		int Port;
-
-
+		
 };
 
 #endif

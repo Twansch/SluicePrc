@@ -15,7 +15,6 @@
 			std::cout << "GetTrafficLight" << lightNumber << std::endl;
 			TrafficLight::LightColour returnColour /*= Red*/;
 			return returnColour;
-			
 		}
 
 		void TrafficLight::SetCurrentColour(LightColour lightColour, int lightNumber)
