@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "DoorMotor.h"
 #include "DoorLock.h"
+#include "Communication.h"
 
 class SluiceFactory
 {

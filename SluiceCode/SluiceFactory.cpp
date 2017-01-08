@@ -6,28 +6,29 @@
 	{
 	}
 	
-	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType, int port) //SluiceType is een enum met de 3 verschillende variaties
+	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType, int port ) //SluiceType is een enum met de 3 verschillende variaties
 	{
+		Communication* communication = new Communication(port);
 		Door leftDoor;
 		Door rightDoor;
 		switch(sluiceType) 
 		{
       case SluiceFactory::normalSluice:
       {
-			leftDoor = Door();
-			rightDoor = Door();
+			leftDoor = Door(communication);
+			rightDoor = Door(communication);
 			break;
 	  }
       case SluiceFactory::motorSluice:
       {
-			leftDoor = DoorMotor();
-			rightDoor = DoorMotor();
+			leftDoor = DoorMotor(communication);
+			rightDoor = DoorMotor(communication);
 			break;
 	  }
       case SluiceFactory::lockSluice:
       {
-			leftDoor = DoorLock();
-			rightDoor = DoorLock();
+			leftDoor = DoorLock(communication);
+			rightDoor = DoorLock(communication);
 			break;
 	  }
       default:
@@ -36,7 +37,7 @@
 	  }
         //Real bad error!
    }
-		Sluice sluice = Sluice(leftDoor, rightDoor, port);
+		Sluice sluice = Sluice(leftDoor, rightDoor, communication);
 		return sluice;
 	}
 	/*SluiceWatch roept factory.ConstructSluice aan. 

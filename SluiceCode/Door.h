@@ -2,11 +2,12 @@
 #define DOOR_H
 
 #include "Valve.h"
+#include "Communication.h"
 
 class Door
 {
 	public: // use protected instead of private when DoorMotor and DoorLock need it
-		Door();
+		Door(Communication* comm);
 		enum DoorState {OPEN, CLOSED, OPENING, CLOSING, LOCKED, ENGINEDAMAGE, STOPPED};
 		enum WaterLevel {Low, BelowValve2, AboveValve2, AboveValve3, High};
 		DoorState state;
@@ -19,6 +20,7 @@ class Door
 		void SetValve(Valve valve);
 		void Open();
 		void Close();
+		Communication* communication;
 };
 
 #endif

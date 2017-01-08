@@ -5,9 +5,9 @@
 
 
 
-		TrafficLight::TrafficLight()
+		TrafficLight::TrafficLight(Communication* comm)
 		{
-
+			TrafficLight::communication = comm;
 		}
 
 		TrafficLight::LightColour GetCurrentColour(int lightNumber)
