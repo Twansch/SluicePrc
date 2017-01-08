@@ -1,3 +1,6 @@
+#ifndef DOORMOTOR_H
+#define DOORMOTOR_H
+
 class DoorMotor: public Door 
 {
 	public:
@@ -6,3 +9,5 @@ class DoorMotor: public Door
 		void Open();
 		void Close();
 }
+
+#endif

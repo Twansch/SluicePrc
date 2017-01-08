@@ -1,3 +1,7 @@
+#ifndef DOORLOCK_H
+#define DOORLOCK_H
+
+
 class DoorLock: public Door 
 {
 	public:
@@ -8,3 +12,5 @@ class DoorLock: public Door
 		void SetDoorLock(); //[Left|Right]:[on|off] ack
 		LockState GetDoorLockState();//[Left|Right]
 }
+
+#endif
