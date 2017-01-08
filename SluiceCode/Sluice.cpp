@@ -65,11 +65,11 @@
 
 		void SetLight(TrafficLight light)
 		{
-			WaterLevel w = GetWaterHeight();
+			Door::WaterLevel w = Door::GetWaterHeight();
 
 
 			
-			if(w == Low && leftDoor.GetDoorState() == open){
+			if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
 	if (SluiceWatch.VrijgevenVoorInvaren() == true){
 		SetCurrentColour(Green, 1);
 		SetCurrentColour(Red, 2);
@@ -86,7 +86,7 @@
 
 }
 
-elseIf(w == High && rightDoor.GetDoorState() == open){
+elseIf(w == High && Sluice::RightDoor.GetDoorState() == open){
 	if (VrijgevenVoorUitvaren == true){
 		SetCurrentColour(Red, 1);
 		SetCurrentColour(Red, 2);
