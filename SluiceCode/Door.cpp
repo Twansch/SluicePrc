@@ -1,11 +1,10 @@
 #include "Door.h"
 
-		Door::Door(Communication* comm)
+		Door::Door()
 		{
-			Door::communication = comm;
-			this->lowValve = Valve(comm);
-			this->midValve = Valve(comm);
-			this->highValve = Valve(comm);
+			this->lowValve = Valve();
+			this->midValve = Valve();
+			this->highValve = Valve();
 		}
 		Door::DoorState Door::GetDoorState()
 		{

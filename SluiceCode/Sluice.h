@@ -9,7 +9,7 @@
 class Sluice
 {
 	public:
-		Sluice(Door leftDoor, Door rightDoor, Communication* comm);
+		Sluice(Door leftDoor, Door rightDoor);
 		Door LeftDoor;
 		Door RightDoor;
 		TrafficLight leftLightIn;
@@ -19,7 +19,7 @@ class Sluice
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);
 		void SetLight(TrafficLight light);
-		Communication* communication;
+		
 	
 	private:
 		int Port;

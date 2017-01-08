@@ -1,9 +1,9 @@
 #include "Valve.h"
 
 		
-		Valve::Valve(Communication* comm)
+		Valve::Valve()
 		{
-			Valve::communication = comm;
+
 		}
 		void Valve::Open()
 		{

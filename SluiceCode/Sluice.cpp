@@ -2,15 +2,14 @@
 
 
 
-		Sluice::Sluice(Door leftDoor, Door rightDoor, Communication* comm)
+		Sluice::Sluice(Door leftDoor, Door rightDoor)
 		{
-			Sluice::communication = comm;
-			
+
 		}
 
 		Door::WaterLevel Door::GetWaterHeight()
 		{
-			WaterLevel waterLevel = High;
+			Door::WaterLevel waterLevel = High;
 
 			/*switch(waterLevel)
 			{

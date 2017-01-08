@@ -7,14 +7,13 @@
 class TrafficLight
 {
 	public:
-		TrafficLight(Communication* comm);
+		TrafficLight();
 		enum LightColour {Red, Green};
 		LightColour currentColour;
 		LightColour GetCurrentColour();
 		void SetCurrentColour(LightColour lightColour, int lightNumber);
 		//void On(int lightNumber);
 		//void Off(int lightNumber);
-		Communication* communication;
 };
 
 #endif
