@@ -23,7 +23,8 @@ class Sluice
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);
 		void Schutten();
-		void SetLight(TrafficLight light);
+		void SetLightIn();
+		void SetLightOut();
 		Communication* communication;
 	
 	private:

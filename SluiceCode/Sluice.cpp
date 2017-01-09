@@ -69,53 +69,65 @@
 		}
 
 
-		void SetLight(TrafficLight light)
+		void SetLightIn()
 		{
 			Door::WaterLevel w = Door::GetWaterHeight();
 
 
 			
 			if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
-	if (SluiceWatch.VrijgevenVoorInvaren() == true){
+	
 		leftLightIn.SetCurrentColour(Green, 1);
 		leftLightOut.SetCurrentColour(Red, 2);
 		rightLightOut.SetCurrentColour(Red, 3);
 		rightLightIn.SetCurrentColour(Red, 4);
 		
-	//}
-	elseif(SluiceWatch.VrijgevenVoorUitvaren() == true){
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Green, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Red, 4);
 	}
-
-}
-
-elseIf(w == High && Sluice::RightDoor.GetDoorState() == open){
-	if (VrijgevenVoorUitvaren == true){
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Green, 3);
-		rightLightIn.SetCurrentColour(Red, 4);		
-	}
-	elseif(VrijgevenVoorInvaren == true){
+	else if(w == High && Sluice::RightDoor.GetDoorState() == open){
 		leftLightIn.SetCurrentColour(Red, 1);
 		leftLightOut.SetCurrentColour(Red, 2);
 		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Green, 4);		
+		rightLightIn.SetCurrentColour(Green, 4);
 	}
-
-
-}
-
-else{
+	else{
 		leftLightIn.SetCurrentColour(Red, 1);
 		leftLightOut.SetCurrentColour(Red, 2);
 		rightLightOut.SetCurrentColour(Red, 3);
 		rightLightIn.SetCurrentColour(Red, 4);
 		
 }
+}
+
+void SetLightOut()
+		{
+			Door::WaterLevel w = Door::GetWaterHeight();
+
+if(w == High && Sluice::RightDoor.GetDoorState() == open){
+
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Green, 3);
+		rightLightIn.SetCurrentColour(Red, 4);		
+	}
+else if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Green, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Red, 4);
+	}
+	else{
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Red, 4);
+		
+}
+	
+
+
+}
+
+
 			/*int number = 0;			
 
 			switch(light)

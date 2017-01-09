@@ -14,8 +14,8 @@ class SluiceWatch
 		void AddSluice(Sluice sluice);
 		// en   RemoveSluice(Sluice sluice); toe te voegen om onze vector te beheren.
 		
-		void VrijgevenVoorInvaren(); // Engelse duidelijke naam bedenken
-		void VrijgevenVoorUitvaren(); // Engelse duidelijke naam bedenken
+		void VrijgevenVoorInvaren(int sluicePortNumber); // Engelse duidelijke naam bedenken
+		void VrijgevenVoorUitvaren(int sluicePortNumber); // Engelse duidelijke naam bedenken
 		void StartSchut(int sluicePortNumber); // Engelse duidelijke naam bedenken
 		void AlarmMode();
 };

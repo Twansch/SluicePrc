@@ -19,21 +19,87 @@
 				//sluices.push_back(sluice);
 		}
 		
-		void VrijgevenVoorInvaren()
+		void VrijgevenVoorInvaren(int sluicePortNumber)
 		{
+			switch(sluicePortNumber)
+			{
+				case 5555:
+				{
+					sluices.firstSluice.SetLightIn();
+					break;
+				}
+
+				case 5556:
+				{
+					sluices.secondSluice.SetLightIn();
+					break;
+				}
+
+				case 5557:
+				{
+					sluices.thirdSluice.SetLightIn();
+					break;
+				}
+
+				case 5558:
+				{
+					sluices.fourthSluice.SetLightIn();
+					break;
+				}
+
+				case default:
+				{
+					break;
+				}
+			}
+
 			
 			//check which side the waterlevels are equal
 			//check if the door on that side is fully opened
 			//Make these checks polling so it will wait till the door is totally opened
 			//Set trafficlight green 
 		}
-		void VrijgevenVoorUitvaren()
+		
+		void VrijgevenVoorUitvaren(int sluicePortNumber)
 		{
+
+			switch(sluicePortNumber)
+			{
+				case 5555:
+				{
+					sluices.firstSluice.SetLightOut();
+					break;
+				}
+
+				case 5556:
+				{
+					sluices.secondSluice.SetLightOut();
+					break;
+				}
+
+				case 5557:
+				{
+					sluices.thirdSluice.SetLightOut();
+					break;
+				}
+
+				case 5558:
+				{
+					sluices.fourthSluice.SetLightOut();
+					break;
+				}
+
+				case default:
+				{
+					break;
+				}
+			}
 			//check which side the waterlevels are equal
 			//check if the door on that side is fully opened
 			//Make these checks polling so it will wait till the door is totally opened
 			//Set trafficlight green 
 		}
+
 		void StartSchut(int sluicePortNumber)
 		{
 			switch(sluicePortNumber)
