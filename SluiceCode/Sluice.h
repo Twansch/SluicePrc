@@ -17,8 +17,11 @@ class Sluice
 		TrafficLight* rightLightIn;
 		TrafficLight* rightLightOut;
 
-		bool waterHigh=false;
-		bool waterLow=false;
+		bool waterHigh;
+		bool waterLow;
+
+		enum WaterLevel {Low, BelowValve2, AboveValve2, AboveValve3, High};
+		WaterLevel GetWaterHeight();
 
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);

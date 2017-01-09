@@ -1,6 +1,7 @@
 #include "Sluice.h"
 
-
+waterLow=false;
+waterHigh=false;
 
 		Sluice::Sluice(Door leftDoor, Door rightDoor, Communication* comm)
 		{
@@ -14,9 +15,11 @@
 
 		}
 
-		/*Door::WaterLevel Door::GetWaterHeight()
+
+
+		Sluice::WaterLevel Sluice::GetWaterHeight()
 		{
-			Door::WaterLevel waterLevel = High;
+			Sluice::WaterLevel waterLevel = High;
 
 			/*switch(waterLevel)
 			{
@@ -48,78 +51,78 @@
 			}*/
 
 
-			/*GetWaterLevel water level, which is:
+			/*etWaterLevel water level, which is:
 				- low
 				- belowValve2
 				- aboveValve2
 				- aboveValve3
-				- high
+				- high*/
 
 				 //instead of High get message
 				return waterLevel;
-		}*/
-		void OpenDoor(Door door)
+		}
+		void Sluice::OpenDoor(Door door)
 		{
 
 			//door.GetWaterLevel
 
 		}
-		void CloseDoor(Door door)
+		void Sluice::CloseDoor(Door door)
 		{
 		}
 
 
-		void SetLightIn()
+		void Sluice::SetLightIn()
 		{
-			Door::WaterLevel w = Door::GetWaterHeight();
+			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
 
 			
-			if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
+			if(w == Low && Sluice::LeftDoor->GetDoorState() == Sluice::LeftDoor->DoorStateOPEN){
 	
-		leftLightIn.SetCurrentColour(Green, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Red, 4);
+		leftLightIn->SetCurrentColour(TrafficLight::Green, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 		
 	}
-	else if(w == High && Sluice::RightDoor.GetDoorState() == open){
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Green, 4);
+	else if(w == High && Sluice::RightDoor->GetDoorState() == OPEN){
+		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Green, 4);
 	}
 	else{
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Red, 4);
+		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 		
 }
 }
 
-void SetLightOut()
+void Sluice::SetLightOut()
 		{
-			Door::WaterLevel w = Door::GetWaterHeight();
+			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
-if(w == High && Sluice::RightDoor.GetDoorState() == open){
+if(w == High && Sluice::RightDoor->GetDoorState() == doorOpen){
 
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Green, 3);
-		rightLightIn.SetCurrentColour(Red, 4);		
+		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Green, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);		
 	}
-else if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Green, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Red, 4);
+else if(w == Low && Sluice::LeftDoor->GetDoorState() == doorOpen){
+		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Green, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 	}
 	else{
-		leftLightIn.SetCurrentColour(Red, 1);
-		leftLightOut.SetCurrentColour(Red, 2);
-		rightLightOut.SetCurrentColour(Red, 3);
-		rightLightIn.SetCurrentColour(Red, 4);
+		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
+		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
+		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
+		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 		
 }
 	
@@ -167,5 +170,3 @@ else if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
 			{
 
 			}*/
-			
-		}

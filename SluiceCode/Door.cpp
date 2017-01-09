@@ -9,6 +9,8 @@
 		}
 		Door::DoorState Door::GetDoorState()
 		{
+			communication(SendAndReceive("GetDoorState"));
+
 			//Sendmessage get door state
 			//return doorstate
 		}
@@ -27,18 +29,7 @@
 		{
 		}
 		
-		Door::WaterLevel Door::GetWaterHeight()
-		{
-			/*GetWaterLevel water level, which is:
-				- low
-				- belowValve2
-				- aboveValve2
-				- aboveValve3
-				- high
-				*/   
-				WaterLevel waterLevel = High; //instead of High get message
-				return waterLevel;
-		}
+		
 		void Door::SetValve(Valve valve)
 		{
 		}
