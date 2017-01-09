@@ -25,10 +25,22 @@
 				if(lightNumber == 1)
 				{
 				message = "SetTrafficLight1Green:on;";
+				message = "SetTrafficLight1Red:off;";
 				}
 				else if(lightNumber = 2)
 				{
 				message = "SetTrafficLight2Red:off;";
+				message = "SetTrafficLight2Green:on;";
+				}
+								else if(lightNumber = 3)
+				{
+				message = "SetTrafficLight3Red:off;";
+				message = "SetTrafficLight3Green:on;";
+				}
+								else if(lightNumber = 4)
+				{
+				message = "SetTrafficLight4Red:off;";
+				message = "SetTrafficLight4Green:on;";
 				}
 
 				char * returnString;
@@ -55,10 +67,22 @@
 				if(lightNumber == 1)
 				{
 				message = "SetTrafficLight1Green:off;";
+				message = "SetTrafficLight1Red:on;";
 				}
 				else if(lightNumber = 2)
 				{
 				message = "SetTrafficLight2Red:on;";
+				message = "SetTrafficLight2Green:off;";
+				}
+								else if(lightNumber = 3)
+				{
+				message = "SetTrafficLight3Red:on;";
+				message = "SetTrafficLight3Green:off;";
+				}
+								else if(lightNumber = 4)
+				{
+				message = "SetTrafficLight4Red:on;";
+				message = "SetTrafficLight4Green:off;";
 				}
 
 
