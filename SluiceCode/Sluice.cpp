@@ -1,7 +1,7 @@
 #include "Sluice.h"
 
-waterLow=false;
-waterHigh=false;
+bool waterLow=false;
+bool waterHigh=false;
 
 		Sluice::Sluice(Door leftDoor, Door rightDoor, Communication* comm)
 		{
@@ -78,7 +78,7 @@ waterHigh=false;
 
 
 			
-			if(w == Low && Sluice::LeftDoor->GetDoorState() == Sluice::LeftDoor->DoorStateOPEN){
+			if(w == Low && Sluice::LeftDoor->GetDoorState() == Door::open){
 	
 		leftLightIn->SetCurrentColour(TrafficLight::Green, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
@@ -86,7 +86,7 @@ waterHigh=false;
 		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 		
 	}
-	else if(w == High && Sluice::RightDoor->GetDoorState() == OPEN){
+	else if(w == High && Sluice::RightDoor->GetDoorState() == Door::open){
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
@@ -105,14 +105,14 @@ void Sluice::SetLightOut()
 		{
 			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
-if(w == High && Sluice::RightDoor->GetDoorState() == doorOpen){
+if(w == High && Sluice::RightDoor->GetDoorState() == Door::open){
 
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Green, 3);
 		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);		
 	}
-else if(w == Low && Sluice::LeftDoor->GetDoorState() == doorOpen){
+else if(w == Low && Sluice::LeftDoor->GetDoorState() == Door::open){
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Green, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);

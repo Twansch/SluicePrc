@@ -17,8 +17,8 @@ class Sluice
 		TrafficLight* rightLightIn;
 		TrafficLight* rightLightOut;
 
-		bool waterHigh;
-		bool waterLow;
+		//bool waterHigh;
+		//bool waterLow;
 
 		enum WaterLevel {Low, BelowValve2, AboveValve2, AboveValve3, High};
 		WaterLevel GetWaterHeight();

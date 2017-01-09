@@ -9,7 +9,7 @@
 		}
 		Door::DoorState Door::GetDoorState()
 		{
-			communication(SendAndReceive("GetDoorState"));
+			communication->SendAndReceive("GetDoorState");
 
 			//Sendmessage get door state
 			//return doorstate
