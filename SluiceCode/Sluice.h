@@ -23,8 +23,8 @@ class Sluice
 		enum WaterLevel {Low, BelowValve2, AboveValve2, AboveValve3, High};
 		WaterLevel GetWaterHeight();
 
-		void OpenDoor(Door door);
-		void CloseDoor(Door door);
+		void OpenDoor();
+		void CloseDoor();
 		void Schutten();
 		void SetLightIn();
 		void SetLightOut();

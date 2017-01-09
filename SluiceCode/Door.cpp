@@ -21,6 +21,11 @@
 					d = doorOpen;
 					return d;
 				}
+				else if(returnString == "doorClosed")
+				{
+					d = doorClosed;
+					return d;
+				}
 				break;
 			}
 			case 2:
@@ -31,7 +36,13 @@
 				{
 					d = doorOpen;
 					return d;
-				}				break;
+				}
+				else if(returnString == "doorClosed")
+				{
+					d = doorClosed;
+					return d;
+				}				
+				break;
 			}
 			default:
 			{

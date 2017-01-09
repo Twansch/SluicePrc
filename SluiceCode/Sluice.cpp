@@ -19,7 +19,44 @@ bool waterHigh=false;
 
 		Sluice::WaterLevel Sluice::GetWaterHeight()
 		{
-			Sluice::WaterLevel waterLevel = High;
+			Sluice::WaterLevel waterLevel;
+			
+	
+				char * returnString;
+				communication->SendAndReceive("GetWaterLevel", returnString);
+				if(returnString == "low")
+				{
+					waterLevel = Low;
+					return waterLevel;
+				}
+				else if(returnString == "belowValve2")
+				{
+					waterLevel = BelowValve2;
+					return waterLevel;
+				}
+				else if(returnString == "aboveValve2")
+				{
+					waterLevel = AboveValve2;
+					return waterLevel;
+				}
+
+else if(returnString == "aboveValve3")
+				{
+					waterLevel = AboveValve3;
+					return waterLevel;
+				}
+
+else if(returnString == "high")
+				{
+					waterLevel = High;
+					return waterLevel;
+				}
+
+
+			
+
+			return waterLevel;
+			
 
 			/*switch(waterLevel)
 			{
@@ -59,9 +96,9 @@ bool waterHigh=false;
 				- high*/
 
 				 //instead of High get message
-				return waterLevel;
+				//return waterLevel;
 		}
-		void Sluice::OpenDoor(Door door)
+		void Sluice::OpenDoor()
 		{
 			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
@@ -77,7 +114,7 @@ bool waterHigh=false;
 			//door.GetWaterLevel
 
 		}
-		void Sluice::CloseDoor(Door door)
+		void Sluice::CloseDoor()
 		{	
 			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
@@ -91,6 +128,29 @@ bool waterHigh=false;
 			}
 		}
 
+		void Sluice::Schutten()
+		{	
+			Sluice::WaterLevel w = Sluice::GetWaterHeight();
+
+			if(Sluice::LeftDoor->GetDoorState(1) == Door::doorOpen)
+			{
+				Sluice::CloseDoor();
+				waterHigh = true;
+
+			}
+			else if (Sluice::RightDoor->GetDoorState(2) == Door::doorOpen)
+			{
+				Sluice::CloseDoor();
+				waterLow = true;
+			}
+
+			if(Sluice::LeftDoor->GetDoorState(1) == Door::doorClosed && waterHigh == true)
+			{
+
+			}
+
+
+		}
 
 		void Sluice::SetLightIn()
 		{
