@@ -37,7 +37,7 @@ void Communication::CreateTCPClientSocket () //THIS FUNCTION AND THE CONSTRUCTOR
     this->Sock = sock;
 }
 
-void Communication::SendAndReceive(char * echoString, char * returnString)
+void Communication::SendAndReceive(char const * echoString, char * returnString)
 {
         int echoStringLen = strlen (echoString);          /* Determine input length */
         

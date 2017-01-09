@@ -21,14 +21,18 @@
 		{
 			if (lightColour == Green)
 			{	
-				std::stringstream ssGreen;
-				std::stringstream ssRed;
-
-				ssGreen << "SetTrafficLight" << lightNumber << "Green:on;";
-				ssRed << "SetTrafficLight" << lightNumber << "Red:off;";
+				char const * message;
+				if(lightNumber == 1)
+				{
+				message = "SetTrafficLight1Green:on;";
+				}
+				else if(lightNumber = 2)
+				{
+				message = "SetTrafficLight2Red:off;";
+				}
 
 				char * returnString;
-				communication->SendAndReceive(ssGreen, returnString);
+				communication->SendAndReceive(message, returnString);
 				if(returnString == "ack;")
 				{
 				}
@@ -36,7 +40,7 @@
 				{
 					//Something went wrong!
 				}
-				communication->SendAndReceive(ssRed, returnString);
+				communication->SendAndReceive(message, returnString);
 								if(returnString == "ack;")
 				{
 				}
@@ -47,14 +51,20 @@
 			}
 			else if(lightColour == Red)
 			{
-				std::stringstream ssGreen;
-				std::stringstream ssRed;
+				char const * message;
+				if(lightNumber == 1)
+				{
+				message = "SetTrafficLight1Green:off;";
+				}
+				else if(lightNumber = 2)
+				{
+				message = "SetTrafficLight2Red:on;";
+				}
 
-				ssGreen << "SetTrafficLight" << lightNumber << "Green:off;";
-				ssRed << "SetTrafficLight" << lightNumber << "Red:on;";
+
 				
 				char * returnString;
-				communication->SendAndReceive(ssGreen, returnString);
+				communication->SendAndReceive(message, returnString);
 				if(returnString == "ack;")
 				{
 				}
@@ -62,7 +72,7 @@
 				{
 					//Something went wrong!
 				}
-				communication->SendAndReceive(ssRed, returnString);
+				communication->SendAndReceive(message, returnString);
 								if(returnString == "ack;")
 				{
 				}

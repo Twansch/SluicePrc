@@ -14,7 +14,7 @@ class Communication
 	public:
 		Communication(unsigned short port);
 		void CreateTCPClientSocket();
-		void SendAndReceive(char * echoString, char * returnString);
+		void SendAndReceive(char const * echoString, char * returnString);
 	
 	private:
 		unsigned short Port;
