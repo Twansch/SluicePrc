@@ -19,15 +19,28 @@
 
 		void TrafficLight::SetCurrentColour(LightColour lightColour, int lightNumber)
 		{
-			/*if (lightColour == Green)
-			{
-				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Green:on;");
-				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Red:off;");
+			if (lightColour == Green)
+			{	
+				std::stringstream ssGreen;
+				std::stringstream ssRed;
+
+				ssGreen << "SetTrafficLight" << lightNumber << "Green:on;";
+				ssRed << "SetTrafficLight" << lightNumber << "Red:off;";
+
+
+				communication->SendAndReceive(ssGreen);
+				communication->SendAndReceive(ssRed);
 			}
 			else if(lightColour == Red)
 			{
-				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Green:off;");
-				comm->SendAndReceive("SetTrafficLight" + lightNumber + "Red:on;");
+				std::stringstream ssGreen;
+				std::stringstream ssRed;
+
+				ssGreen << "SetTrafficLight" << lightNumber << "Green:off;";
+				ssRed << "SetTrafficLight" << lightNumber << "Red:on;";
+
+				communication->SendAndReceive(ssGreen);
+				communication->SendAndReceive(ssRed);
 			}
 
 			//SetTrafficLight[1..4][Red|Green]:[on|off]

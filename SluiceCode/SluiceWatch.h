@@ -16,7 +16,7 @@ class SluiceWatch
 		
 		void VrijgevenVoorInvaren(); // Engelse duidelijke naam bedenken
 		void VrijgevenVoorUitvaren(); // Engelse duidelijke naam bedenken
-		void StartSchut(); // Engelse duidelijke naam bedenken
+		void StartSchut(int sluicePortNumber); // Engelse duidelijke naam bedenken
 		void AlarmMode();
 };
 

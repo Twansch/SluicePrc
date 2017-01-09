@@ -71,49 +71,49 @@
 
 		void SetLight(TrafficLight light)
 		{
-			/*Door::WaterLevel w = Door::GetWaterHeight();
+			Door::WaterLevel w = Door::GetWaterHeight();
 
 
 			
 			if(w == Low && Sluice::LeftDoor.GetDoorState() == open){
 	if (SluiceWatch.VrijgevenVoorInvaren() == true){
-		SetCurrentColour(Green, 1);
-		SetCurrentColour(Red, 2);
-		SetCurrentColour(Red, 3);
-		SetCurrentColour(Red, 4);
+		leftLightIn.SetCurrentColour(Green, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Red, 4);
 		
-	}
+	//}
 	elseif(SluiceWatch.VrijgevenVoorUitvaren() == true){
-		SetCurrentColour(Red, 1);
-		SetCurrentColour(Green, 2);
-		SetCurrentColour(Red, 3);
-		SetCurrentColour(Red, 4);
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Green, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Red, 4);
 	}
 
 }
 
 elseIf(w == High && Sluice::RightDoor.GetDoorState() == open){
 	if (VrijgevenVoorUitvaren == true){
-		SetCurrentColour(Red, 1);
-		SetCurrentColour(Red, 2);
-		SetCurrentColour(Green, 3);
-		SetCurrentColour(Red, 4);		
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Green, 3);
+		rightLightIn.SetCurrentColour(Red, 4);		
 	}
 	elseif(VrijgevenVoorInvaren == true){
-		SetCurrentColour(Red, 1);
-		SetCurrentColour(Red, 2);
-		SetCurrentColour(Red, 3);
-		SetCurrentColour(Green, 4);		
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Green, 4);		
 	}
 
 
 }
 
 else{
-		SetCurrentColour(Red, 1);
-		SetCurrentColour(Red, 2);
-		SetCurrentColour(Red, 3);
-		SetCurrentColour(Red, 4);
+		leftLightIn.SetCurrentColour(Red, 1);
+		leftLightOut.SetCurrentColour(Red, 2);
+		rightLightOut.SetCurrentColour(Red, 3);
+		rightLightIn.SetCurrentColour(Red, 4);
 		
 }
 			/*int number = 0;			

@@ -16,8 +16,13 @@ class Sluice
 		TrafficLight* leftLightOut;
 		TrafficLight* rightLightIn;
 		TrafficLight* rightLightOut;
+
+		bool waterHigh=false;
+		bool waterLow=false;
+
 		void OpenDoor(Door door);
 		void CloseDoor(Door door);
+		void Schutten();
 		void SetLight(TrafficLight light);
 		Communication* communication;
 	
