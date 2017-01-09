@@ -7,10 +7,29 @@
 			*midValve = Valve(comm);
 			*highValve = Valve(comm);
 		}
-		Door::DoorState Door::GetDoorState()
+		Door::DoorState Door::GetDoorState(int doorNumber)
 		{
-			communication->SendAndReceive("GetDoorState");
+			Door::DoorState d;
+			switch(doorNumber)
+			{
+			case 1:
+			{
 
+				d = communication->SendAndReceive("GetDoorLeft");
+				break;
+			}
+			case 2:
+			{
+				d = communication->SendAndReceive("GetDoorRight");
+				break;
+			}
+			default:
+			{
+				break;
+			}
+			}
+
+			return d;
 			//Sendmessage get door state
 			//return doorstate
 		}

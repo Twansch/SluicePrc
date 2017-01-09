@@ -8,13 +8,13 @@ class Door
 {
 	public: // use protected instead of private when DoorMotor and DoorLock need it
 		Door(Communication* comm);
-		enum DoorState {open, CLOSED, OPENING, CLOSING, LOCKED, ENGINEDAMAGE, STOPPED};
+		enum DoorState {doorOpen, doorClosed, doorOpening, doorClosing, doorLocked, motorDamage, doorStopped};
 		
 		DoorState state;
 		Valve* lowValve;
 		Valve* midValve;
 		Valve* highValve;
-		DoorState GetDoorState();
+		DoorState GetDoorState(int doorNumber);
 		void SetDoorState(DoorState doorState);
 		
 		void SetValve(Valve valve);
