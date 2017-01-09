@@ -8,8 +8,8 @@ class Valve
 	public:
 		Valve(Communication* comm);
 		bool valveOpened;
-		void Open();
-		void Close();
+		void Open(int valveNumber, int doorNumber);
+		void Close(int valveNumber, int doorNumber);
 		Communication* communication;
 };
 
