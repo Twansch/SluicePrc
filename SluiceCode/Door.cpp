@@ -14,14 +14,24 @@
 			{
 			case 1:
 			{
-
-				d = communication->SendAndReceive("GetDoorLeft");
+				char * returnString;
+				communication->SendAndReceive("GetDoorLeft", returnString);
+				if(returnString == "doorOpen")
+				{
+					d = doorOpen;
+					return d;
+				}
 				break;
 			}
 			case 2:
 			{
-				d = communication->SendAndReceive("GetDoorRight");
-				break;
+				char * returnString;
+				communication->SendAndReceive("GetDoorRight", returnString);
+				if(returnString == "doorOpen")
+				{
+					d = doorOpen;
+					return d;
+				}				break;
 			}
 			default:
 			{

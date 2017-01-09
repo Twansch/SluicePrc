@@ -4,10 +4,14 @@
 
 		SluiceWatch::SluiceWatch()
 		{
-			Sluice firstSluice = ConstructSluice(SluiceFactory::normalSluice, 5555 ); //SluiceType is een enum met de 3 verschillende variaties
-			Sluice secondSluice = ConstructSluice(SluiceFactory::normalSluice, 5556 ); //SluiceType is een enum met de 3 verschillende variaties
-			Sluice thirdSluice = ConstructSluice(SluiceFactory::lockSluice, 5557 ); //SluiceType is een enum met de 3 verschillende variaties
-			Sluice fourthSluice = ConstructSluice(SluiceFactory::motorSluice, 5558); //SluiceType is een enum met de 3 verschillende variaties
+			SluiceFactory firstFactory = SluiceFactory(); //Factories should not be re-used because it has ownership of 1 communication object of which we pass pointers
+			Sluice firstSluice = firstFactory.ConstructSluice(SluiceFactory::normalSluice, 5555 ); //SluiceType is een enum met de 3 verschillende variaties
+			SluiceFactory secondFactory = SluiceFactory();
+			Sluice secondSluice = secondFactory.ConstructSluice(SluiceFactory::normalSluice, 5556 ); //SluiceType is een enum met de 3 verschillende variaties
+			SluiceFactory thirdFactory = SluiceFactory();
+			Sluice thirdSluice = thirdFactory.ConstructSluice(SluiceFactory::lockSluice, 5557 ); //SluiceType is een enum met de 3 verschillende variaties
+			SluiceFactory fourthFactory = SluiceFactory();
+			Sluice fourthSluice = fourthFactory.ConstructSluice(SluiceFactory::motorSluice, 5558); //SluiceType is een enum met de 3 verschillende variaties
 			sluices.push_back(firstSluice);
 			sluices.push_back(secondSluice);
 			sluices.push_back(thirdSluice);
@@ -29,29 +33,29 @@
 			{
 				case 5555:
 				{
-					sluices.firstSluice.SetLightIn();
+					sluices.at(0).SetLightIn();
 					break;
 				}
 
 				case 5556:
 				{
-					sluices.secondSluice.SetLightIn();
+					sluices.at(1).SetLightIn();
 					break;
 				}
 
 				case 5557:
 				{
-					sluices.thirdSluice.SetLightIn();
+					sluices.at(2).SetLightIn();
 					break;
 				}
 
 				case 5558:
 				{
-					sluices.fourthSluice.SetLightIn();
+					sluices.at(3).SetLightIn();
 					break;
 				}
 
-				case default:
+				default:
 				{
 					break;
 				}
@@ -71,29 +75,29 @@
 			{
 				case 5555:
 				{
-					sluices.firstSluice.SetLightOut();
+					sluices.at(0).SetLightOut();
 					break;
 				}
 
 				case 5556:
 				{
-					sluices.secondSluice.SetLightOut();
+					sluices.at(1).SetLightOut();
 					break;
 				}
 
 				case 5557:
 				{
-					sluices.thirdSluice.SetLightOut();
+					sluices.at(2).SetLightOut();
 					break;
 				}
 
 				case 5558:
 				{
-					sluices.fourthSluice.SetLightOut();
+					sluices.at(3).SetLightOut();
 					break;
 				}
 
-				case default:
+				default:
 				{
 					break;
 				}
@@ -110,29 +114,29 @@
 			{
 				case 5555:
 				{
-					sluices.firstSluice.Schutten();
+					sluices.at(0).Schutten();
 					break;
 				}
 
 				case 5556:
 				{
-					sluices.secondSluice.Schutten();
+					sluices.at(1).Schutten();
 					break;
 				}
 
 				case 5557:
 				{
-					sluices.thirdSluice.Schutten();
+					sluices.at(2).Schutten();
 					break;
 				}
 
 				case 5558:
 				{
-					sluices.fourthSluice.Schutten();
+					sluices.at(3).Schutten();
 					break;
 				}
 
-				case default:
+				default:
 				{
 					break;
 				}

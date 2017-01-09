@@ -37,7 +37,7 @@ void Communication::CreateTCPClientSocket () //THIS FUNCTION AND THE CONSTRUCTOR
     this->Sock = sock;
 }
 
-void Communication::SendAndReceive(char * echoString)
+void Communication::SendAndReceive(char * echoString, char * returnString)
 {
         int echoStringLen = strlen (echoString);          /* Determine input length */
         
@@ -59,5 +59,6 @@ void Communication::SendAndReceive(char * echoString)
         
         printf("\n");
         
+        returnString = echoBuffer;
         //return echoBuffer //To Check if ack is received or getter is received
 }

@@ -78,7 +78,7 @@ bool waterHigh=false;
 
 
 			
-			if(w == Low && Sluice::LeftDoor->GetDoorState() == Door::doorOpen){
+			if(w == Low && Sluice::LeftDoor->GetDoorState(1) == Door::doorOpen){
 	
 		leftLightIn->SetCurrentColour(TrafficLight::Green, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
@@ -86,7 +86,7 @@ bool waterHigh=false;
 		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);
 		
 	}
-	else if(w == High && Sluice::RightDoor->GetDoorState() == Door::doorOpen){
+	else if(w == High && Sluice::RightDoor->GetDoorState(2) == Door::doorOpen){
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);
@@ -105,14 +105,14 @@ void Sluice::SetLightOut()
 		{
 			Sluice::WaterLevel w = Sluice::GetWaterHeight();
 
-if(w == High && Sluice::RightDoor->GetDoorState() == Door::doorOpen){
+if(w == High && Sluice::RightDoor->GetDoorState(2) == Door::doorOpen){
 
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Red, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Green, 3);
 		rightLightIn->SetCurrentColour(TrafficLight::Red, 4);		
 	}
-else if(w == Low && Sluice::LeftDoor->GetDoorState() == Door::doorOpen){
+else if(w == Low && Sluice::LeftDoor->GetDoorState(1) == Door::doorOpen){
 		leftLightIn->SetCurrentColour(TrafficLight::Red, 1);
 		leftLightOut->SetCurrentColour(TrafficLight::Green, 2);
 		rightLightOut->SetCurrentColour(TrafficLight::Red, 3);

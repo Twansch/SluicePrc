@@ -27,9 +27,23 @@
 				ssGreen << "SetTrafficLight" << lightNumber << "Green:on;";
 				ssRed << "SetTrafficLight" << lightNumber << "Red:off;";
 
-
-				communication->SendAndReceive(ssGreen);
-				communication->SendAndReceive(ssRed);
+				char * returnString;
+				communication->SendAndReceive(ssGreen, returnString);
+				if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
+				communication->SendAndReceive(ssRed, returnString);
+								if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
 			}
 			else if(lightColour == Red)
 			{
@@ -38,9 +52,24 @@
 
 				ssGreen << "SetTrafficLight" << lightNumber << "Green:off;";
 				ssRed << "SetTrafficLight" << lightNumber << "Red:on;";
-
-				communication->SendAndReceive(ssGreen);
-				communication->SendAndReceive(ssRed);
+				
+				char * returnString;
+				communication->SendAndReceive(ssGreen, returnString);
+				if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
+				communication->SendAndReceive(ssRed, returnString);
+								if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
 			}
 
 			//SetTrafficLight[1..4][Red|Green]:[on|off]
