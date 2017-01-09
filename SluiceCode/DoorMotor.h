@@ -7,7 +7,7 @@ class DoorMotor: public Door
 {
 	public:
 		DoorMotor(Communication* comm);
-		void SetDoorState();
+		//void SetDoorState();
 		void Open();
 		void Close();
 		

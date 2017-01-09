@@ -11,7 +11,7 @@ class SluiceWatch
 		SluiceWatch();
 		std::vector<Sluice> sluices;
 		
-		void AddSluice(Sluice sluice);
+		//void AddSluice(Sluice sluice);
 		// en   RemoveSluice(Sluice sluice); toe te voegen om onze vector te beheren.
 		
 		void VrijgevenVoorInvaren(int sluicePortNumber); // Engelse duidelijke naam bedenken

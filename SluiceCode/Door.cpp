@@ -54,12 +54,7 @@
 			//Sendmessage get door state
 			//return doorstate
 		}
-		void Door::SetDoorState(DoorState doorState)
-		{
 
-			//send doorState
-			//check Ack
-		}
 		
 		void Door::Open(int doorNumber)
 		{

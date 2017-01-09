@@ -15,7 +15,6 @@ class Door
 		Valve* midValve;
 		Valve* highValve;
 		DoorState GetDoorState(int doorNumber);
-		void SetDoorState(DoorState doorState);
 		
 		void SetValve(Valve valve);
 		void Open(int doorNumber);

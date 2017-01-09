@@ -18,14 +18,14 @@
 			sluices.push_back(fourthSluice);
 		}
 		
-		void SluiceWatch::AddSluice(Sluice sluice)
+	/*	void SluiceWatch::AddSluice(Sluice sluice)
 		{	
 			/*sluices.push_back(firstSluice);
 			sluices.push_back(secondSluice);
 			sluices.push_back(thirdSluice);
 			sluices.push_back(fourthSluice);*/
 				//sluices.push_back(sluice);
-		}
+		}*/
 		
 		void SluiceWatch::VrijgevenVoorInvaren(int sluicePortNumber)
 		{

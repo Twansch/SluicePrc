@@ -10,7 +10,7 @@ class DoorLock: public Door
 		void Open();
 		void Close();
 		enum LockState {LOCKWORKING, LOCKDAMAGED};
-		void SetDoorLock(); //[Left|Right]:[on|off] ack
+		//void SetDoorLock(); //[Left|Right]:[on|off] ack
 		LockState GetDoorLockState();//[Left|Right]
 		
 };
