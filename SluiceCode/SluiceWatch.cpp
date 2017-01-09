@@ -4,22 +4,26 @@
 
 		SluiceWatch::SluiceWatch()
 		{
-			Sluice firstSluice = ConstructSluice(normalSluice, 5555 ) //SluiceType is een enum met de 3 verschillende variaties
-			Sluice secondSluice = ConstructSluice(normalSluice, 5556 ) //SluiceType is een enum met de 3 verschillende variaties
-			Sluice thirdSluice = ConstructSluice(lockSluice, 5557 ) //SluiceType is een enum met de 3 verschillende variaties
-			Sluice fourthSluice = ConstructSluice(motorSluice, 5558) //SluiceType is een enum met de 3 verschillende variaties
-		}
-		
-		void AddSluice(Sluice sluice)
-		{	
+			Sluice firstSluice = ConstructSluice(SluiceFactory::normalSluice, 5555 ); //SluiceType is een enum met de 3 verschillende variaties
+			Sluice secondSluice = ConstructSluice(SluiceFactory::normalSluice, 5556 ); //SluiceType is een enum met de 3 verschillende variaties
+			Sluice thirdSluice = ConstructSluice(SluiceFactory::lockSluice, 5557 ); //SluiceType is een enum met de 3 verschillende variaties
+			Sluice fourthSluice = ConstructSluice(SluiceFactory::motorSluice, 5558); //SluiceType is een enum met de 3 verschillende variaties
 			sluices.push_back(firstSluice);
 			sluices.push_back(secondSluice);
 			sluices.push_back(thirdSluice);
 			sluices.push_back(fourthSluice);
+		}
+		
+		void SluiceWatch::AddSluice(Sluice sluice)
+		{	
+			/*sluices.push_back(firstSluice);
+			sluices.push_back(secondSluice);
+			sluices.push_back(thirdSluice);
+			sluices.push_back(fourthSluice);*/
 				//sluices.push_back(sluice);
 		}
 		
-		void VrijgevenVoorInvaren(int sluicePortNumber)
+		void SluiceWatch::VrijgevenVoorInvaren(int sluicePortNumber)
 		{
 			switch(sluicePortNumber)
 			{
@@ -60,7 +64,7 @@
 			//Set trafficlight green 
 		}
 		
-		void VrijgevenVoorUitvaren(int sluicePortNumber)
+		void SluiceWatch::VrijgevenVoorUitvaren(int sluicePortNumber)
 		{
 
 			switch(sluicePortNumber)
@@ -100,7 +104,7 @@
 			//Set trafficlight green 
 		}
 
-		void StartSchut(int sluicePortNumber)
+		void SluiceWatch::StartSchut(int sluicePortNumber)
 		{
 			switch(sluicePortNumber)
 			{
@@ -143,7 +147,7 @@
 			//Start opening door
 		}
 
-		void AlarmMode()
+		void SluiceWatch::AlarmMode()
 		{
 			//if(Doorleft and DoorRight are closed) Close all valves
 			//if(Doorleft and/or Doorright are opening or closing) Stop all movement

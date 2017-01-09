@@ -6,7 +6,7 @@
 	{
 	}
 	
-	Sluice ConstructSluice(SluiceFactory::SluiceType sluiceType, int port ) //SluiceType is een enum met de 3 verschillende variaties
+	Sluice SluiceFactory::ConstructSluice(SluiceFactory::SluiceType sluiceType, int port ) //SluiceType is een enum met de 3 verschillende variaties
 	{
 		Communication* communication = new Communication(port);
 		switch(sluiceType) 
