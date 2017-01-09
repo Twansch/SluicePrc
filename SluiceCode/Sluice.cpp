@@ -63,12 +63,32 @@ bool waterHigh=false;
 		}
 		void Sluice::OpenDoor(Door door)
 		{
+			Sluice::WaterLevel w = Sluice::GetWaterHeight();
+
+			if (w == Low)
+			{
+				LeftDoor->Open(1);
+			}
+			else if (w == High)
+			{
+				RightDoor->Open(2);
+			}
 
 			//door.GetWaterLevel
 
 		}
 		void Sluice::CloseDoor(Door door)
-		{
+		{	
+			Sluice::WaterLevel w = Sluice::GetWaterHeight();
+
+			if (w == Low)
+			{
+				LeftDoor->Close(1);
+			}
+			else if (w == High)
+			{
+				RightDoor->Close(2);
+			}
 		}
 
 

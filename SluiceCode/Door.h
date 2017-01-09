@@ -18,8 +18,8 @@ class Door
 		void SetDoorState(DoorState doorState);
 		
 		void SetValve(Valve valve);
-		void Open();
-		void Close();
+		void Open(int doorNumber);
+		void Close(int doorNumber);
 		Communication* communication;
 };
 

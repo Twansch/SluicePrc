@@ -45,21 +45,75 @@
 		}
 		void Door::SetDoorState(DoorState doorState)
 		{
+
 			//send doorState
 			//check Ack
 		}
 		
-		void Door::Open()
+		void Door::Open(int doorNumber)
 		{
+			char const * message;
+
+					if(doorNumber == 1)
+					{
+				message = "SetDoor1:open;";
+			}
+			else if(doorNumber == 2)
+			{
+				message = "SetDoor2:open;";
+				}
+
+							
+
+				char * returnString;
+				communication->SendAndReceive(message, returnString);
+				if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
+				communication->SendAndReceive(message, returnString);
+								
+			
+			
+
 			//
 		}
 		
-		void Door::Close()
+		void Door::Close(int doorNumber)
 		{
+			char const * message;
+
+					if(doorNumber == 1)
+					{
+				message = "SetDoor1:close;";
+			}
+			else if(doorNumber == 2)
+			{
+				message = "SetDoor2:close;";
+				}
+
+							
+
+				char * returnString;
+				communication->SendAndReceive(message, returnString);
+				if(returnString == "ack;")
+				{
+				}
+				else
+				{
+					//Something went wrong!
+				}
+				communication->SendAndReceive(message, returnString);
+
+
 		}
 		
 		
 		void Door::SetValve(Valve valve)
 		{
+
 		}
 		
